@@ -5,6 +5,7 @@
   import TitleDiv from '../components/TitleDiv.vue'
   import TransitionView from './TransitionView.vue'
 
+  const baseUrl = import.meta.env.BASE_URL
   const posts = ref([])
   const loading = ref(true)
   const transition = ref(true)
@@ -13,7 +14,7 @@
   const fetchList = async () => {
     try {
       // 注意：这里的路径是相对于网站根目录的
-      const res = await axios.get('/posts/list.json?t=' + Date.now()) // 加时间戳防止缓存
+      const res = await axios.get(`${import.meta.env.BASE_URL}posts/list.json?t=${Date.now()}`) // 加时间戳防止缓存
       posts.value = res.data
     } catch (e) {
       console.error('获取列表失败', e)
@@ -39,14 +40,14 @@
 
   <div class="head">
     <div class="card">
-      <img class="head-portrait" src="/profile.jpg" alt="">
+      <img class="head-portrait" :src="`${baseUrl}profile.jpg`" alt="">
       <router-link to="/post/about-me">
         struct@杰构体
       </router-link>
       <hr class="top">
-      <a href="/post/about-blog">
+      <router-link to="/post/about-blog">
         <TitleDiv content="struct@杰构体的博客"></TitleDiv>
-      </a>
+      </router-link>
       <p>All is well</p>
       <p>希望成为一名优秀的程序员</p>
       <hr class="bottom">

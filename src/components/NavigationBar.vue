@@ -25,9 +25,9 @@ onUnmounted(() => {
     <!-- 顶部导航栏 -->
     <div id="nav" class="NavigationBar">
         <div class="nav-left">
-            <a href="/" title="首页">
+            <router-link to="/" title="首页">
                 <div class="link i-ri-home-4-line"></div>
-            </a>
+            </router-link>
 
             <a href="http://124.70.160.102/" title="友情链接" target="_blank">
                 <div class="link i-ri-link"></div>

@@ -2,14 +2,16 @@
 
 import TitleDiv from './TitleDiv.vue';
 
+const baseUrl = import.meta.env.BASE_URL
+
 </script>
 
 <template>
  <div class="InformationCard">
-    <img src="/profile.jpg" alt="">
-    <a href="/post/about-me">        
+    <img :src="`${baseUrl}profile.jpg`" alt="">
+    <router-link to="/post/about-me">
         <TitleDiv content="沈敏杰"></TitleDiv>
-    </a>
+    </router-link>
     
     <p>all is well</p>
     <p>组件开发中。。。</p>

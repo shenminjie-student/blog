@@ -126,7 +126,7 @@ const loadPost = async () => {
     
     try {
         // 请求 public 下的文件
-        const res = await axios.get(`/posts/${route.params.id}.md?t=${Date.now()}`, {
+        const res = await axios.get(`${import.meta.env.BASE_URL}posts/${route.params.id}.md?t=${Date.now()}`, {
         responseType: 'text'
         })
         

@@ -8,6 +8,7 @@ import MarkdownItAnchor from 'markdown-it-anchor'
 import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
+  base: '/blog/',
   plugins: [
     vue(),
     UnoCSS(),
